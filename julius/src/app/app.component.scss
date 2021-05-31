@@ -1,0 +1,34 @@
+.login {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #ececec;
+}
+
+.content {
+    height: 50%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    // background-color: antiquewhite;
+}
+
+.titulos {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        margin: 5%;
+        margin-top: 35%;
+    }
+}
+
+.input-login {
+    width: 100%;
+}
