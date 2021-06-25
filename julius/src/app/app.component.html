@@ -5,19 +5,21 @@
       <h1>Login</h1>
     </div>
   
-    <div>
-      <mat-form-field appearance="outline" class="input-login">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Ingrese su usuario">
-      </mat-form-field>
-    
-      <mat-form-field appearance="outline" class="input-login">
-        <mat-label>Contraseña</mat-label>
-        <input type="password" matInput placeholder="Ingrese su contraseña">
-      </mat-form-field>
-    
-      <button mat-raised-button color="primary" class="input-login">Iniciar sesión</button>
-    </div>
+    <!-- <form [formGroup]="form"> -->
+      <div [formGroup]="form">
+        <mat-form-field appearance="outline" class="input-login">
+          <mat-label>Usuario</mat-label>
+          <input matInput [formControl]="email" placeholder="Ingrese su usuario">
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline" class="input-login">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" [formControl]="password" matInput placeholder="Ingrese su contraseña">
+        </mat-form-field>
+      
+        <button mat-raised-button color="primary" class="input-login" (click)="login()">Iniciar sesión</button>
+      </div>
+    <!-- </form> -->
   </div>
 </div>
 
