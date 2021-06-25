@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from './interfaces/user';
 import { AccountService } from './services/account.service';
 
 @Component({
@@ -30,5 +31,18 @@ export class AppComponent implements OnInit {
 
   login() {
     console.log(this.email.value, this.password.value);
+
+    const user: User = {
+      email: this.email.value,
+      password: this.password.value
+    }
+    
+    this.accountService.login(user)
+      .then(
+        () => console.log('EXITO')
+      )
+      .catch(
+        err => console.log('ERROR:', err)
+      )
   }
 }
