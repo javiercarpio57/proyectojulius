@@ -11,15 +11,15 @@ export class AccountService {
   constructor(
     private http: HttpClient
   ) {
-    this.url = 'http://127.0.0.1:5000/api/login';
+    this.url = 'http://localhost:5000/api/login';
   }
 
-  login (user: User): Promise<any> {
+  public login (user: User) {
     let params = new HttpParams();
     params = params.set('email', user.email);
     params = params.set('password', user.password);
     console.log(user);
 
-    return this.http.get<any>(this.url, { params }).toPromise();
+    return this.http.get(this.url, { params }).toPromise();
   }
 }
