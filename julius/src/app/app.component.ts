@@ -1,48 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from './interfaces/user';
-import { AccountService } from './services/account.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  public email: FormControl = new FormControl('', Validators.required);
-  public password: FormControl = new FormControl('', Validators.required);
-  form: FormGroup = new FormGroup({
-    email: this.email,
-    password: this.password,
-  });
-  title = 'julius';
+export class AppComponent{
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private accountService: AccountService
-  ) { }
-
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-  }
-
-  login() {
-    console.log(this.email.value, this.password.value);
-
-    const user: User = {
-      email: this.email.value,
-      password: this.password.value
-    }
-    
-    this.accountService.login(user)
-      .then(
-        () => console.log('EXITO')
-      )
-      .catch(
-        err => console.log('ERROR:', err)
-      )
-  }
+  constructor() { }
 }

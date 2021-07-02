@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+mat-spinner {
+    margin: 0 auto;
+}
+
+.overlay{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.176);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    position: fixed;
+}

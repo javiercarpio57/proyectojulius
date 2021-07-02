@@ -7,6 +7,7 @@ import { User } from '../interfaces/user';
 })
 export class AccountService {
   private url: string;
+  public user: User = null;
 
   constructor(
     private http: HttpClient
@@ -21,5 +22,13 @@ export class AccountService {
     console.log(user);
 
     return this.http.get(this.url, { params }).toPromise();
+  }
+
+  // TODO: INVESTIGAR COMO PRESERVAR VARIABLE this.user
+  public isLogged(): boolean {
+    if (this.user) {
+      return true;
+    }
+    return false;
   }
 }

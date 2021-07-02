@@ -11,10 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
+import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    LoginComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
